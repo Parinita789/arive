@@ -13,12 +13,9 @@ export class MongooseService implements IMongooseService {
   public connection: mongoose.Connection;
 
   private connectionOptions = {
-    autoIndex: false,
     connectTimeoutMS: 180 * 1000,
     socketTimeoutMS: 180 * 1000,
     keepAlive: true,
-    keepAliveInitialDelay: 10 * 1000,
-    useNewUrlParser: true,
     useUnifiedTopology: true,
   };
 
@@ -37,15 +34,11 @@ export class MongooseService implements IMongooseService {
     );
 
     mongoose.connection.on('connected', () => {
-      this.logger.info('Mongoose connection established');
+      this.logger.info('Mongoose connection successfull');
     }); 
 
     mongoose.connection.on('disconnected', () => {
-      this.logger.info('Mongoose connection lost');
-    });
-
-    mongoose.connection.on('reconnected', () => {
-      this.logger.info('Mongoose connection reestablished');
+      this.logger.info('Mongoose disconnected!!');
     });
 
     mongoose.connection.on('error', (err) => {

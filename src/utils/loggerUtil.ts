@@ -3,7 +3,6 @@ import { createLogger, format, Logger, transports } from 'winston';
 
 export interface ILoggerUtil {
   info(message: string): void;
-  warn(message: string): void;
   error(message: string): void;
 }
 
@@ -29,10 +28,6 @@ export class LoggerUtil implements ILoggerUtil {
 
   public info(message: string): void {
     this.winston.info(message);
-  }
-
-  public warn(message: string): void {
-    this.winston.warn(message);
   }
 
   public error(message: string): void {
