@@ -6,9 +6,9 @@
 
 To get started, here's a list of recommended next steps:
 
-1. clone the project from https://github.com/Parinita789/housing-app.git
+1. clone the project from https://github.com/Parinita789/arive.git
 2. Install dependencies
-3. cd arive-backend
+3. cd arive
 4. Run Mongo and Redis server
 5. npm install
 6. create a .env file in the root folder
